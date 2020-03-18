@@ -15,6 +15,3 @@ main = do
   let inFile = fmap (either (undefined) (\x->x)) $ readImage (head args)
   let outFile = fmap analyze $ inFile
   fmap fst outFile >>= (BS.writeFile fileName)
-  --output <- fmap getClustForDebug inFile
-  --putStrLn $ ("Image was quantized to " ++ (show (length output)) ++ " colors.")
-  --putStrLn $ fmap (\x->x) output
